@@ -10,9 +10,9 @@ g.autoloaded_licenses = true
 local licenses_dir = debug.getinfo(1).source:match("@?(.*/)") .. "licenses/"
 
 local substitute_placeholders = function(lines, name, year, mail)
-    if name == nil or "_" then name = g.Licenses_name end
-    if year == nil or "_" then year = os.date("%Y") end
-    if mail == nil or "_" then mail = g.Licenses_mail end
+    if name == nil or name == "_" then name = g.Licenses_name end
+    if year == nil or year == "_" then year = os.date("%Y") end
+    if mail == nil or mail == "_" then mail = g.Licenses_mail end
     -- mail can be emtpy
     if not mail then mail = "" end
 
